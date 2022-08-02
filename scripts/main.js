@@ -65,6 +65,7 @@ else{console.log(false)};
         console.log(student[key])
     };
 
+
 //     #### Task 4 🖥
 //     Дан обьект:
 
@@ -144,27 +145,59 @@ let userLogin = prompt (`Enter is your login?`);
 let userPassword = prompt (`Enter is your password for registration?`);
 
 let userForm = {
-    [userLogin]:true,
-    [userPassword]:true,
+    [userLogin]:'',
+    [userPassword]:'',
 }
 let userLoginCheck = prompt (`Confirm  your login?`);
-
 
 let userPasswordCheck = prompt (`Confirm your password?`);
 
 let userFormCheck = {
-    [userLoginCheck]: true,
-    [userPasswordCheck]: true,
+    [userLoginCheck]:'',
+    [userPasswordCheck]:'',
 }
-if(userFormCheck === userForm ) {
-    console.log (`You are welcome!`)}
+    if(JSON.stringify(userForm)===JSON.stringify(userFormCheck)) {
+    console.log (`You are welcome!`)
+    }
+    else (console.log (`You are wrong!`));
 
-// function validator() {
-//     let validatorForm=true;
-//         if(userFormCheck === userForm ) {
-//     console.log (`You are welcome!`)}
 
-// }
+    
+
+    // const validateValue = function(value) {
+    //     return value.length > 3 && value.length <= 10;
+    // }
+    
+    // const createUser = function() {
+    //     const user = {
+    //         login: '',
+    //         password: ''
+    //     }
+    
+    //     let isValid = false;
+    //     while (!isValid) {
+    //         user.login = prompt('login');
+    //         isValid = validateValue(user.login);
+    //     }
+    
+    //     isValid = false;
+    //     while (!isValid) {
+    //         user.password = prompt('password');
+    //         isValid = validateValue(user.password);
+    //     }
+    
+    //     return user;
+    // }
+    
+    // const user1 = createUser();
+    // const user2 = createUser();
+    
+    
+    // if(user1.login === user2.login && user1.password === user2.password) {
+    //     console.log('Welcome');
+    // }
+
+
 
 
 // ### ADVANCED level
@@ -179,17 +212,6 @@ if(userFormCheck === userForm ) {
 
 // Даны два одинаковых обьекта. Сравните их так чтобы они были равны
 
-// ```javascript
-//     let student1 = {
-//         name: 'Polina',
-//         age: 27,
-//     }
-
-//     let student2 = {
-//         name: 'Polina',
-//         age: 27,
-//     }
-// ```
     let student1 = {
         name: 'Polina',
         age: 27,
@@ -218,15 +240,19 @@ else{console.log(false);}
 //Но произошла ошибка и в этом обьекте нету птицы. Если попробуем узнать имя мы получим **ОШИБКУ**. 
 // Задача придумать как обратиться к несуществующему обьекту и не получить ошибку чтобы наша программа работала дальше.
 
-// ```javascript
-// const animals = {
-//    cat: {
-//       name: 'Енчик',
-//       age: 3,
-//    },
-//    dog: {
-//       name: 'Орео',
-//       age: 2,
-//    }
-// }
-// ```
+
+const animals = {
+   cat: {
+      name: 'Енчик',
+      age: 3,
+   },
+   dog: {
+      name: 'Орео',
+      age: 2,
+   }
+}
+
+if('bird' in animals) {
+    console.log(animals.bird);
+}
+else{console.log(`there is not bird`)}
